@@ -3,17 +3,17 @@ import React, {Component} from 'react';
 
 const StatelessComponent =(props)=>{
     return(
-        <navbar>
+        <div>
 
-            <navbar>
+            <div>
                 <li onClick={()=>{
                     props.clickHandler(props.index);
                 }} className={props.details.selected ? 'selected': ""}>
                     {props.details.name}
                 </li>
-            </navbar>
+            </div>
 
-        </navbar>
+        </div>
     )
 }
 export default StatelessComponent;

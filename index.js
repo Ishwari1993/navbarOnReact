@@ -37,10 +37,16 @@ class Root extends Component{
     }
     changeState(index){
         var tasks = this.state.tasks;
-        var task = tasks[index];
-        task.selected = !task.selected
+        var newTasks = tasks.map((item, i) => {
+            if (i === index) {
+                item.selected = true;
+            } else {
+                item.selected = false;
+            }
+            return item;
+        })
         this.setState({
-            tasks:tasks
+            tasks:newTasks
         })
         console.log(this.state.tasks[index]);
       
@@ -48,7 +54,7 @@ class Root extends Component{
  
     render(){
         return(
-            <navbar>
+            <div className="navbar">
             
 
                 {/* <div>
@@ -64,7 +70,7 @@ class Root extends Component{
                 }
                 </ul>
 
-            </navbar>
+            </div>
        
         
             
